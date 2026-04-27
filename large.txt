@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main()
+{
+    int n,d=1,l=1;
+    scanf("%d",&n);
+    while (n>0) {
+            d=n%10;
+             if (d>l) {
+                 l=d;
+             }
+             n/=10;
+        }
+    printf("The largest digit in the number is: %d\n", l);    
+}
+
