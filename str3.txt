@@ -1,0 +1,20 @@
+import itertools
+
+# Read input for K and M
+k, m = map(int, input().split())
+
+# Read K lists
+lists = []
+for _ in range(k):
+    # The first element is the number of elements, followed by the elements
+    lists.append(list(map(int, input().split()))[1:])
+
+# Calculate max value
+max_val = 0
+for combination in itertools.product(*lists):
+    # Calculate (sum(xi^2)) % M
+    result = sum(x**2 for x in combination) % m
+    if result > max_val:
+        max_val = result
+
+print(max_val)
